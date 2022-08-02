@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+/* Universal Styling */
+
+:root {
+  --black-blue: hsl(234, 17%, 12%);
+  --dark-blue: hsl(235, 16%, 14%);
+  --desat-blue: hsl(236, 21%, 26%);
+  --text-blue: hsl(237, 18%, 59%);
+  --soft-red: hsl(345, 95%, 68%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(./images/pattern-hills.svg) repeat-x bottom,
+    url(./images/bg-stars.svg),
+    linear-gradient(to bottom, var(--black-blue), var(--dark-blue));
+}
+
+/* Countdown Container */
+
+.heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  margin-bottom: 6.25rem;
+}
+
+.countdown-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.countdown-col {
+  width: calc(25% - 20px);
+}
+
+.unit-container {
+  background: var(--desat-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: var(--black-blue) 0px 10px;
+}
+
+.container-upper {
+  height: 50%;
+  width: 100%;
+  background-color: var(--dark-blue);
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  opacity: 0.3;
+}
+
+.unit-container:before,
+.unit-container:after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  display: block;
+  background-color: var(--black-blue);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(7px);
+}
+
+.unit-container:before {
+  left: -7px;
+  z-index: 10;
+}
+
+.unit-container:after {
+  right: -7px;
+}
+
+.number-output {
+  color: var(--soft-red);
+  padding: 50px;
+  text-align: center;
+  z-index: 2;
+  font-size: 84px;
+}
+
+.unit-heading {
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-blue);
+  letter-spacing: 5px;
+  font-size: 1rem;
+}
+
+/* Attribution Section */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
